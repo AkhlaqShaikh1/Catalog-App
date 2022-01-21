@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
       // initialRoute: "/home",
       routes: { 
         "/": (context) => const LoginPage(),
-        MyRoutes.HomeRoute: (context) => HomePage(),
-        MyRoutes.LoginRoute: (context) => const LoginPage() 
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => const LoginPage() 
       },
     );
   }
