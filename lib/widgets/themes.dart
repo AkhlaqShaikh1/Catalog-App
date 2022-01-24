@@ -11,7 +11,13 @@ class MyTheme {
         color: Colors.white,
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.black),
-        toolbarTextStyle: AppBarTheme.of(context).titleTextStyle,
+        titleTextStyle: TextStyle(
+          color: Colors.black,
+          fontFamily: GoogleFonts.lato().fontFamily,
+          fontWeight: FontWeight.w900,
+          fontSize: 18,
+        ),
+        centerTitle: true,
       ));
   static ThemeData darkTheme(BuildContext context) =>
       ThemeData(brightness: Brightness.dark);
