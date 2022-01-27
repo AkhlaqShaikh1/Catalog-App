@@ -11,7 +11,9 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyTheme.creamColor,
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       bottomNavigationBar: Container(
         color: Colors.white,
         child: ButtonBar(
@@ -25,8 +27,8 @@ class HomeDetailPage extends StatelessWidget {
                   backgroundColor:
                       MaterialStateProperty.all(MyTheme.darkBluishColor),
                   shape: MaterialStateProperty.all(const StadiumBorder())),
-              child: "BUY".text.make(),
-            ).wh(100, 50)
+              child: "Add to Cart".text.make(),
+            ).wh(130, 50)
           ],
         ).p24().py12(),
       ),
@@ -54,6 +56,12 @@ class HomeDetailPage extends StatelessWidget {
                           .make(),
                       catalog.desc.text.caption(context).extraBlack.xl.make(),
                       10.heightBox,
+                      "Vita oportune furono cospetto intendo fuor forza. Quali suoi suo quel cospetto nostro. Alle nostri non nome mortali quali e furono quali. Quale esperienza gli prieghi ciascheduna in per donne.."
+                          .text
+                          .caption(context)
+                          .center
+                          .make()
+                          .p16()
                     ],
                   ).py64(),
                 ),

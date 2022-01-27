@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:myapp1/pages/cart_page.dart';
 import 'package:myapp1/pages/home_page.dart';
 import 'package:myapp1/pages/login_page.dart';
 import 'package:myapp1/utils/routes.dart';
 import 'package:myapp1/widgets/themes.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -13,17 +15,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // bringVegtables();
-    return  MaterialApp(
+    return MaterialApp(
       // home: HomePage(),
       themeMode: ThemeMode.light,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
       initialRoute: MyRoutes.homeRoute,
-      routes: { 
+      routes: {
         "/": (context) => const LoginPage(),
         MyRoutes.homeRoute: (context) => const HomePage(),
-        MyRoutes.loginRoute: (context) => const LoginPage() 
+        MyRoutes.loginRoute: (context) => const LoginPage(),
+        MyRoutes.cartRoute: (context) => const CartPage()
       },
     );
   }
