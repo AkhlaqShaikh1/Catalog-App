@@ -4,10 +4,12 @@ import 'package:myapp1/pages/login_page.dart';
 import 'package:myapp1/utils/routes.dart';
 import 'package:myapp1/widgets/themes.dart';
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // bringVegtables();
