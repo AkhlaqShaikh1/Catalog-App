@@ -38,15 +38,16 @@ class CatalogItem extends StatelessWidget {
         child: Row(
       children: [
         Hero(
-            tag: Key(catalog.id.toString()),
-            child: CatalogImage(image: catalog.image)),
+          tag: Key(catalog.id.toString()),
+          child: CatalogImage(image: catalog.image),
+        ),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               catalog.name.text.xl
-                  .color(MyTheme.darkBluishColor)
+                  .color(context.backgroundColor)
                   .semiBold
                   .make(),
               catalog.desc.text.caption(context).make(),
@@ -55,17 +56,17 @@ class CatalogItem extends StatelessWidget {
                 alignment: MainAxisAlignment.spaceBetween,
                 buttonPadding: EdgeInsets.zero,
                 children: [
-                  "\$${catalog.price}".text.extraBold.make(),
+                  "\$${catalog.price}".text.extraBold.lg.make().px(5),
                   ElevatedButton(
                     onPressed: () {},
                     style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(MyTheme.darkBluishColor),
+                      backgroundColor: MaterialStateProperty.all(context
+                          .theme.floatingActionButtonTheme.backgroundColor),
                       shape: MaterialStateProperty.all(
                         const StadiumBorder(),
                       ),
                     ),
-                    child: "Add to Cart".text.sm.make(),
+                    child: "Add to Cart".text.make().p0(),
                   )
                 ],
               ).pOnly(right: 8)
@@ -73,6 +74,6 @@ class CatalogItem extends StatelessWidget {
           ),
         )
       ],
-    )).white.roundedLg.square(150).make().py16();
+    )).color(context.cardColor).roundedLg.square(150).make().py16();
   }
 }
