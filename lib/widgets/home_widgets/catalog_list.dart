@@ -16,14 +16,18 @@ class CatalogList extends StatelessWidget {
         itemBuilder: (context, index) {
           final catalog = CatalogModel.items[index];
           return InkWell(
-              onTap: () => {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                HomeDetailPage(catalog: catalog)))
-                  },
-              child: CatalogItem(catalog: catalog));
+            onTap: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomeDetailPage(
+                    catalog: catalog,
+                  ),
+                ),
+              )
+            },
+            child: CatalogItem(catalog: catalog),
+          );
         });
   }
 }
@@ -42,35 +46,37 @@ class CatalogItem extends StatelessWidget {
           child: CatalogImage(image: catalog.image),
         ),
         Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              catalog.name.text.xl
-                  .color(context.backgroundColor)
-                  .semiBold
-                  .make(),
-              catalog.desc.text.caption(context).make(),
-              10.heightBox,
-              ButtonBar(
-                alignment: MainAxisAlignment.spaceBetween,
-                buttonPadding: EdgeInsets.zero,
-                children: [
-                  "\$${catalog.price}".text.extraBold.lg.make().px(5),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(context
-                          .theme.floatingActionButtonTheme.backgroundColor),
-                      shape: MaterialStateProperty.all(
-                        const StadiumBorder(),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                catalog.name.text.xl
+                    .color(context.backgroundColor)
+                    .semiBold
+                    .make(),
+                catalog.desc.text.caption(context).make(),
+                10.heightBox,
+                ButtonBar(
+                  alignment: MainAxisAlignment.spaceBetween,
+                  buttonPadding: EdgeInsets.zero,
+                  children: [
+                    "\$${catalog.price}".text.extraBold.lg.make().px(5),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(context
+                            .theme.floatingActionButtonTheme.backgroundColor),
+                        shape: MaterialStateProperty.all(
+                          const StadiumBorder(),
+                        ),
                       ),
-                    ),
-                    child: "Add to Cart".text.make().p0(),
-                  )
-                ],
-              ).pOnly(right: 8)
-            ],
+                      child: "Add to Cart".text.make().p0(),
+                    )
+                  ],
+                ).pOnly(right: 8)
+              ],
+            ),
           ),
         )
       ],

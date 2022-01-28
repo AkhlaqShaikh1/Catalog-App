@@ -20,7 +20,7 @@ class HomeDetailPage extends StatelessWidget {
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
           children: [
-            "\$${catalog.price}".text.extraBold.red800.xl4.make(),
+            "\$${catalog.price}".text.extraBold.xl4.make(),
             ElevatedButton(
               onPressed: () {},
               style: ButtonStyle(
@@ -45,25 +45,27 @@ class HomeDetailPage extends StatelessWidget {
                 height: 30,
                 arcType: VxArcType.CONVEY,
                 edge: VxEdge.TOP,
-                child: Container(
-                  color: context.cardColor,
-                  width: context.screenWidth,
-                  child: Column(
-                    children: [
-                      catalog.name.text.xl4
-                          .color(context.backgroundColor)
-                          .semiBold
-                          .make(),
-                      catalog.desc.text.caption(context).extraBlack.xl.make(),
-                      10.heightBox,
-                      "Vita oportune furono cospetto intendo fuor forza. Quali suoi suo quel cospetto nostro. Alle nostri non nome mortali quali e furono quali. Quale esperienza gli prieghi ciascheduna in per donne.."
-                          .text
-                          .caption(context)
-                          .center
-                          .make()
-                          .p16()
-                    ],
-                  ).py64(),
+                child: SingleChildScrollView(
+                  child: Container(
+                    color: context.cardColor,
+                    width: context.screenWidth,
+                    child: Column(
+                      children: [
+                        catalog.name.text.xl4
+                            .color(context.backgroundColor)
+                            .semiBold
+                            .make(),
+                        catalog.desc.text.caption(context).extraBlack.xl.make(),
+                        10.heightBox,
+                        "Vita oportune furono cospetto intendo fuor forza. Quali suoi suo quel cospetto nostro. Alle nostri non nome mortali quali e furono quali. Quale esperienza gli prieghi ciascheduna in per donne.."
+                            .text
+                            .caption(context)
+                            .center
+                            .make()
+                            .p16()
+                      ],
+                    ).py64(),
+                  ),
                 ),
               ),
             ),
